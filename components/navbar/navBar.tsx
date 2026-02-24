@@ -22,7 +22,7 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="flex items-center gap-1 text-propi-grey hover:text-propi-title"
+              className="flex items-center gap-1 text-sm font-medium text-grey-800 hover:text-grey-900"
             >
               {link.label}
               <IconChevronDown size={16} stroke={2} />
@@ -32,7 +32,7 @@ export default function Navbar() {
       </div>
 
       <div className="flex items-center gap-3">
-        <button className="hidden items-center gap-2 rounded-full border border-propi-grey-light px-3 py-2 text-sm text-propi-grey md:flex">
+        <button className="hidden items-center gap-2 rounded-full border border-grey-400 px-3 py-2 text-sm text-grey-800 font-medium md:flex">
           El Salvador
           <IconChevronDown size={16} stroke={2} />
           <Image
@@ -48,9 +48,9 @@ export default function Navbar() {
           <IconUser size={20} stroke={2} />
         </button>
 
-        <div className="h-6 w-px bg-propi-grey-light" />
+        <div className="h-6 w-px bg-grey-400" />
 
-        <button className="p-2 text-propi-grey">
+        <button className="p-2 text-grey-800">
           <IconMenu2 size={24} stroke={2} />
         </button>
       </div>
