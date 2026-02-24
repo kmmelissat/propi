@@ -2,25 +2,28 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  /* Propi palette */
+  --propi-green: #00b66b;
+  --propi-green-light: #cdffe7;
+  --propi-title: #212121;
+  --propi-description: #424242;
+  --propi-grey: #757575;
+  --propi-grey-light: #eeeeee;
 }
 
 @theme inline {
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-propi-green: var(--propi-green);
+  --color-propi-green-light: var(--propi-green-light);
+  --color-propi-title: var(--propi-title);
+  --color-propi-description: var(--propi-description);
+  --color-propi-grey: var(--propi-grey);
+  --color-propi-grey-light: var(--propi-grey-light);
+  --font-sans: var(--font-mena-grotesk);
+  --font-mono: var(--font-nunito);
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-mena-grotesk), sans-serif;
 }

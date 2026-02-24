@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { menaGrotesk, nunito } from "@/lib/fonts";
 import "./globals.css";
+import Navbar from "@/components/navbar/navBar";
 
 export const metadata: Metadata = {
   title: {
@@ -22,10 +23,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${menaGrotesk.variable} ${nunito.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>
