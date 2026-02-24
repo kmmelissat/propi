@@ -5,22 +5,30 @@
   /* Propi palette */
   --propi-green: #00b66b;
   --propi-green-light: #cdffe7;
-  --propi-title: #212121;
-  --propi-description: #424242;
-  --propi-grey: #757575;
-  --propi-grey-light: #eeeeee;
+  /* Grey scale */
+  --grey-900: #212121;
+  --grey-800: #424242;
+  --grey-700: #616161;
+  --grey-600: #757575;
+  --grey-500: #9e9e9e;
+  --grey-300: #eeeeee;
+  --grey-200: #f5f5f5;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-propi-green: var(--propi-green);
   --color-propi-green-light: var(--propi-green-light);
-  --color-propi-title: var(--propi-title);
-  --color-propi-description: var(--propi-description);
-  --color-propi-grey: var(--propi-grey);
-  --color-propi-grey-light: var(--propi-grey-light);
+  --color-grey-900: var(--grey-900);
+  --color-grey-800: var(--grey-800);
+  --color-grey-700: var(--grey-700);
+  --color-grey-600: var(--grey-600);
+  --color-grey-500: var(--grey-500);
+  --color-grey-300: var(--grey-300);
+  --color-grey-200: var(--grey-200);
   --font-sans: var(--font-mena-grotesk);
   --font-mono: var(--font-nunito);
+  --font-nunito: var(--font-nunito);
 }
 
 body {

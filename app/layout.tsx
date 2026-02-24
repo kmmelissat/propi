@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     images: ["/propi_image.webp"],
   },
   icons: {
-    icon: "/propi_icon.jpeg",
+    icon: "/propi_icon.svg",
   },
 };
 
