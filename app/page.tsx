@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <main className="relative h-[calc(100vh-100px)] min-h-[500px]">
+    <main className="relative h-screen min-h-[500px] md:h-[calc(100vh-100px)]">
       <Carousel />
 
       <div className="absolute inset-0 z-1 bg-black/40" />

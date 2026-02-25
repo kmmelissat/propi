@@ -88,7 +88,7 @@ export default function CustomSelect({
         </span>
         <IconChevronDown
           size={20}
-          className={`shrink-0 text-grey-600 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`h-4 w-4 shrink-0 text-grey-600 transition-transform md:h-5 md:w-5 ${isOpen ? "rotate-180" : ""}`}
         />
       </button>
 
@@ -117,7 +117,7 @@ export default function CustomSelect({
                     setIsOpen(false);
                   }
                 }}
-                className={`flex cursor-pointer items-center justify-between gap-2 px-3 py-2.5 font-nunito text-sm transition-colors ${
+                className={`flex cursor-pointer items-center justify-between gap-2 px-3 py-2 font-nunito text-xs transition-colors md:py-2.5 md:text-sm ${
                   isSelected
                     ? "bg-propi-green-light text-propi-green"
                     : "text-grey-900 hover:bg-grey-200"
