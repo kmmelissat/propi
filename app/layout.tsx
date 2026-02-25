@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     description: "Encuentra en Propi los mejores inmuebles de LATAM. Compra en planos, compra inmediata o alquila el hogar que buscas.",
     images: [
       {
-        url: "/propi_image_og.png",
+        url: `${siteUrl}/propi_image_og.png`,
         width: 1200,
         height: 630,
         alt: "Propi - Inmuebles en Latinoamérica",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Propi - Inmuebles en Latinoamérica",
     description: "Encuentra en Propi los mejores inmuebles de LATAM.",
-    images: ["/propi_image_og.png"],
+    images: [`${siteUrl}/propi_image_og.png`],
   },
   icons: {
     icon: "/propi_icon.svg",

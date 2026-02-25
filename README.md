@@ -38,7 +38,7 @@ cp .env.example .env
 
 | Variable                      | Descripción                                          | Requerido | Ejemplo                          |
 | ----------------------------- | ---------------------------------------------------- | --------- | -------------------------------- |
-| `NEXT_PUBLIC_SITE_URL`        | URL del sitio (SEO, Open Graph, sitemap, robots).    | No        | `https://propi-three.vercel.app` |
+| `NEXT_PUBLIC_SITE_URL`        | URL base absoluta (https://). Requerida para og:image y twitter:image. | No        | `https://propi-three.vercel.app` |
 | `NEXT_PUBLIC_API_URL`         | URL base del API. Actualmente un adapter simulado.   | No        | `https://api.propi.com/v1`       |
 | `NEXT_PUBLIC_FRONTEND_SOURCE` | Header `x-frontend-source` en las peticiones al API. | No        | `web`                            |
 
