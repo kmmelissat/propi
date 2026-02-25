@@ -3,6 +3,7 @@ import PropertyHeader from "@/components/property/property-header/PropertyHeader
 import PropertyCard from "@/components/property/property-card/PropertyCard";
 import PreReservaForm from "@/components/pre-reserva/form/PreReservaForm";
 import { PropertyType } from "@/types";
+import { ogImage } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Pre Reserva",
@@ -12,10 +13,12 @@ export const metadata: Metadata = {
     title: "Propi | Pre Reserva - Opera Tower",
     description:
       "Reserva tu unidad en Opera Tower. Completa el formulario para continuar con tu pre-reserva.",
+    images: [ogImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Propi | Pre Reserva",
+    images: [ogImage.url],
   },
 };
 

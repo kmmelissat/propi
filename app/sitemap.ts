@@ -1,17 +1,16 @@
 import type { MetadataRoute } from "next";
-
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://propi-three.vercel.app";
+import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: baseUrl,
+      url: siteUrl,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 1,
     },
     {
-      url: `${baseUrl}/pre-reserva`,
+      url: `${siteUrl}/pre-reserva`,
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.9,

@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
 import { menaGrotesk, nunito } from "@/lib/fonts";
+import { siteUrl, ogImage } from "@/lib/site";
 import "./globals.css";
 import Navbar from "@/components/navbar/NavBar";
-
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://propi-three.vercel.app");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -21,20 +18,13 @@ export const metadata: Metadata = {
     siteName: "Propi",
     title: "Propi",
     description: "Encuentra en Propi los mejores inmuebles de LATAM. Compra en planos, compra inmediata o alquila el hogar que buscas.",
-    images: [
-      {
-        url: `${siteUrl}/propi_image_og.png`,
-        width: 1200,
-        height: 630,
-        alt: "Propi - Inmuebles en Latinoamérica",
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Propi - Inmuebles en Latinoamérica",
     description: "Encuentra en Propi los mejores inmuebles de LATAM.",
-    images: [`${siteUrl}/propi_image_og.png`],
+    images: [ogImage.url],
   },
   icons: {
     icon: "/propi_icon.svg",
