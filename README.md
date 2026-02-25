@@ -89,6 +89,10 @@ propi/
 | `/`            | Página de inicio con carrusel y enlace al formulario |
 | `/pre-reserva` | Formulario de pre-reserva con validación             |
 
+## Verificación de preview al compartir
+
+Para comprobar y depurar cómo se ve el enlace al compartir en Facebook, WhatsApp, etc., se usó el [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/). Permite previsualizar las meta tags Open Graph y refrescar la caché ("Scrape Again") después de cambios.
+
 ## Decisiones técnicas
 
 - **Sin librerías de UI externas** (MUI, Chakra, shadcn): componentes custom con Tailwind para mayor control del diseño.
