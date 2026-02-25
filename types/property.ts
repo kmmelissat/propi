@@ -14,6 +14,11 @@ export interface PreReservaHeaderProps {
   propertyType?: PropertyType;
 }
 
+export interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
 export interface PropertyCardProps {
   imageSrc: string;
   imageAlt: string;
@@ -24,4 +29,5 @@ export interface PropertyCardProps {
   areaM2: number;
   price: number;
   isAvailable?: boolean;
+  galleryImages?: GalleryImage[];
 }

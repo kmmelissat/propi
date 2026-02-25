@@ -1,7 +1,11 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
 import { IconBed, IconBath, IconRuler } from "@tabler/icons-react";
 import type { PropertyCardProps } from "@/types";
 import AvailabilityTag from "../availability-tag/AvailabilityTag";
+import PhotoGalleryModal from "../photo-gallery/PhotoGalleryModal";
 
 export default function PropertyCard({
   imageSrc,
@@ -13,7 +17,14 @@ export default function PropertyCard({
   areaM2,
   price,
   isAvailable = true,
+  galleryImages,
 }: PropertyCardProps) {
+  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
+
+  const images =
+    galleryImages?.length
+      ? galleryImages
+      : [{ src: imageSrc, alt: imageAlt }];
   const formattedPrice = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -30,7 +41,12 @@ export default function PropertyCard({
             className="max-md:hidden!"
           />
         )}
-        <div className="relative h-[114px] w-[114px] shrink-0 overflow-hidden rounded-[12px] border border-grey-300 md:aspect-4/3 md:h-auto md:w-full md:border-0">
+        <button
+          type="button"
+          onClick={() => setIsGalleryOpen(true)}
+          className="relative h-[114px] w-[114px] shrink-0 overflow-hidden rounded-[12px] border border-grey-300 md:aspect-4/3 md:h-auto md:w-full md:border-0 cursor-zoom-in"
+          aria-label="Ver galería de fotos"
+        >
           <Image
             src={imageSrc}
             alt={imageAlt}
@@ -38,7 +54,12 @@ export default function PropertyCard({
             className="object-cover"
             sizes="(max-width: 768px) 114px, 400px"
           />
-        </div>
+        </button>
+        <PhotoGalleryModal
+          isOpen={isGalleryOpen}
+          onClose={() => setIsGalleryOpen(false)}
+          images={images}
+        />
 
         {/* Contenido */}
         <div className="relative flex min-w-0 flex-1 flex-col gap-1.5 md:gap-3">

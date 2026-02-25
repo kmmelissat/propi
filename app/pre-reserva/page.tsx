@@ -42,6 +42,13 @@ export default function PreReservaPage() {
             areaM2={78}
             price={295000}
             isAvailable
+            galleryImages={[
+              { src: "/props/apartamento.png", alt: "Opera Tower - Vista 1" },
+              { src: "/props/apartamento2.jpg", alt: "Opera Tower - Vista 2" },
+              { src: "/props/apartamento3.webp", alt: "Opera Tower - Vista 3" },
+              { src: "/props/apartamento4.webp", alt: "Opera Tower - Vista 4" },
+              { src: "/props/apartamento5.webp", alt: "Opera Tower - Vista 5" },
+            ]}
           />
           <PreReservaForm />
         </div>
