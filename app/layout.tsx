@@ -3,7 +3,9 @@ import { menaGrotesk, nunito } from "@/lib/fonts";
 import "./globals.css";
 import Navbar from "@/components/navbar/NavBar";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://propi.com";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://propi-three.vercel.app");
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

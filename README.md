@@ -28,6 +28,22 @@ npm install
 # yarn install
 ```
 
+## Variables de entorno
+
+Copiar `.env.example` a `.env` y configurar los valores:
+
+```bash
+cp .env.example .env
+```
+
+| Variable                      | Descripción                                          | Requerido | Ejemplo                          |
+| ----------------------------- | ---------------------------------------------------- | --------- | -------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`        | URL del sitio (SEO, Open Graph, sitemap, robots).    | No        | `https://propi-three.vercel.app` |
+| `NEXT_PUBLIC_API_URL`         | URL base del API. Actualmente un adapter simulado.   | No        | `https://api.propi.com/v1`       |
+| `NEXT_PUBLIC_FRONTEND_SOURCE` | Header `x-frontend-source` en las peticiones al API. | No        | `web`                            |
+
+Para desarrollo local no es necesario configurar nada; hay valores por defecto. Para producción (Vercel), configurar en el dashboard de Vercel o en `.env.local`.
+
 ## Ejecución
 
 ```bash
@@ -68,10 +84,10 @@ propi/
 
 ## Rutas
 
-| Ruta | Descripción |
-|------|-------------|
-| `/` | Página de inicio con carrusel y enlace al formulario |
-| `/pre-reserva` | Formulario de pre-reserva con validación |
+| Ruta           | Descripción                                          |
+| -------------- | ---------------------------------------------------- |
+| `/`            | Página de inicio con carrusel y enlace al formulario |
+| `/pre-reserva` | Formulario de pre-reserva con validación             |
 
 ## Decisiones técnicas
 
