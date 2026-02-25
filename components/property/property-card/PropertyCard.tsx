@@ -85,7 +85,7 @@ export default function PropertyCard({
           </div>
 
           <div className="hidden border-b border-grey-300 md:block" />
-          <div className="rounded-lg p-0 md:bg-propi-green-light md:p-3">
+          <div className="rounded-lg p-0 md:bg-propi-green-ultra-light md:p-3">
             <p className="hidden font-nunito text-sm text-propi-green md:block">
               Precio
             </p>
