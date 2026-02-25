@@ -2,12 +2,12 @@
 
 import { IconCircleCheck } from "@tabler/icons-react";
 import CustomModal from "@/components/ui/CustomModal";
-import type { PreReservaFormData } from "@/lib/schemas/preReservaSchema";
+import type { PreReservaBackendPayload } from "@/hooks/usePreReservaSubmit";
 
 interface PreReservaModalProps {
   isOpen: boolean;
   onClose: () => void;
-  data: PreReservaFormData | null;
+  data: PreReservaBackendPayload | null;
 }
 
 export default function PreReservaModal({
@@ -15,9 +15,7 @@ export default function PreReservaModal({
   onClose,
   data,
 }: PreReservaModalProps) {
-  const telefonoCompleto = data
-    ? `${data.codigoPais} ${data.telefono}`.trim()
-    : "";
+  const telefonoCompleto = data?.telefonoCompleto ?? "";
 
   return (
     <CustomModal

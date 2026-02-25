@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { IconLoader2 } from "@tabler/icons-react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   IconBrandWhatsapp,
@@ -29,13 +30,21 @@ import {
   VerificarPor,
   DOCUMENTO_PLACEHOLDERS,
 } from "@/lib/constants/preReserva";
+import {
+  usePreReservaSubmit,
+  type PreReservaBackendPayload,
+} from "@/hooks/usePreReservaSubmit";
+import { submitPreReserva } from "@/api/pre-reserva";
 
 export default function PreReservaForm() {
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showTerminosModal, setShowTerminosModal] = useState(false);
-  const [submittedData, setSubmittedData] = useState<PreReservaFormData | null>(
-    null,
-  );
+  const [submittedPayload, setSubmittedPayload] =
+    useState<PreReservaBackendPayload | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const { buildPayload } = usePreReservaSubmit();
 
   const {
     register,
@@ -64,9 +73,19 @@ export default function PreReservaForm() {
   const documentoPlaceholder =
     DOCUMENTO_PLACEHOLDERS[tipoDocumento ?? ""] ?? "Selecciona tipo de documento";
 
-  const onSubmit = (data: PreReservaFormData) => {
-    setSubmittedData(data);
-    setShowSuccessModal(true);
+  const onSubmit = async (data: PreReservaFormData) => {
+    setSubmitError(null);
+    setIsSubmitting(true);
+    try {
+      const payload = buildPayload(data);
+      await submitPreReserva(payload);
+      setSubmittedPayload(payload);
+      setShowSuccessModal(true);
+    } catch {
+      setSubmitError("No se pudo enviar la pre-reserva. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -74,7 +93,7 @@ export default function PreReservaForm() {
       <PreReservaModal
         isOpen={showSuccessModal}
         onClose={() => setShowSuccessModal(false)}
-        data={submittedData}
+        data={submittedPayload}
       />
       <TerminosModal
         isOpen={showTerminosModal}
@@ -340,12 +359,25 @@ export default function PreReservaForm() {
           />
         </CustomFormItem>
 
+        {submitError && (
+          <p className="rounded-lg bg-red-50 px-3 py-2 font-nunito text-sm text-red-600">
+            {submitError}
+          </p>
+        )}
+
         <button
           type="submit"
-          disabled={!aceptaTerminos}
-          className="w-full rounded-lg bg-propi-green py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-propi-green/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-propi-green sm:text-base"
+          disabled={!aceptaTerminos || isSubmitting}
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-propi-green py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-propi-green/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-propi-green sm:text-base"
         >
-          Confirmar reserva
+          {isSubmitting ? (
+            <>
+              <IconLoader2 size={20} className="animate-spin" />
+              Enviando...
+            </>
+          ) : (
+            "Confirmar reserva"
+          )}
         </button>
 
         <div className="flex items-center justify-center gap-2 rounded-xl border border-grey-300 bg-grey-200 px-4 py-3 font-nunito text-[10px] text-grey-700 md:text-xs">
