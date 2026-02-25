@@ -1,4 +1,6 @@
 import PropertyHeader from "@/components/property/property-header/PropertyHeader";
+import PropertyCard from "@/components/property/property-card/PropertyCard";
+import PreReservaForm from "@/components/pre-reserva/PreReservaForm";
 import { PropertyType } from "@/types";
 
 export const metadata = {
@@ -12,6 +14,23 @@ export default function PreReservaPage() {
         propertyName="Opera Tower"
         propertyType={PropertyType.APARTAMENTO}
       />
+
+      <div className="px-4 py-6 md:px-[120px] md:py-8">
+        <div className="grid gap-6 lg:grid-cols-2 lg:items-start">
+          <PropertyCard
+            imageSrc="/props/apartamento.png"
+            imageAlt="Opera Tower"
+            buildingName="Opera Tower"
+            unitName="Apartamento BP13"
+            bedrooms={2}
+            bathrooms={2}
+            areaM2={78}
+            price={295000}
+            isAvailable
+          />
+          <PreReservaForm />
+        </div>
+      </div>
     </main>
   );
 }
