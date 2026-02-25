@@ -8,3 +8,8 @@ export enum PropertyType {
   TERRENO = "Terreno",
   OTROS = "Otros",
 }
+
+export interface PreReservaHeaderProps {
+  propertyName: string;
+  propertyType?: PropertyType;
+}

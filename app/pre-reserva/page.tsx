@@ -1,4 +1,4 @@
-import PropertyHeader from "@/components/propertiesHeader/propertyHeader";
+import PropertyHeader from "@/components/property/property-header/PropertyHeader";
 import { PropertyType } from "@/types";
 
 export const metadata = {

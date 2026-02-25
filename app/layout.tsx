@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { menaGrotesk, nunito } from "@/lib/fonts";
 import "./globals.css";
-import Navbar from "@/components/navbar/navBar";
+import Navbar from "@/components/navbar/NavBar";
 
 export const metadata: Metadata = {
   title: {

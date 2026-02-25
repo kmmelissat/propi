@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Carousel from "@/components/carousel/carousel";
+import Carousel from "@/components/carousel/Carousel";
 
 export const metadata = {
   title: "Propi | Inicio",
