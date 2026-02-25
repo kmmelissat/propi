@@ -342,7 +342,8 @@ export default function PreReservaForm() {
 
         <button
           type="submit"
-          className="w-full rounded-lg bg-propi-green py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-propi-green/90 sm:text-base"
+          disabled={!aceptaTerminos}
+          className="w-full rounded-lg bg-propi-green py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-propi-green/90 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-propi-green sm:text-base"
         >
           Confirmar reserva
         </button>
