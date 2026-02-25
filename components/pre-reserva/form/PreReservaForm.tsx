@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import {
   IconBrandWhatsapp,
@@ -23,11 +22,12 @@ import CustomSelect from "@/components/ui/CustomSelect";
 import CustomCheckbox from "@/components/ui/CustomCheckbox";
 import CustomFormItem from "@/components/ui/CustomFormItem";
 import CustomCard from "@/components/ui/CustomCard";
-import { Controller, useWatch } from "react-hook-form";
+import { Controller, useWatch, useForm } from "react-hook-form";
 import {
   TIPOS_DOCUMENTO,
   CODIGOS_PAIS,
   VerificarPor,
+  DOCUMENTO_PLACEHOLDERS,
 } from "@/lib/constants/preReserva";
 
 export default function PreReservaForm() {
@@ -57,24 +57,12 @@ export default function PreReservaForm() {
       hasError ? "border-red-500 focus:border-red-500" : "border-grey-300"
     }`;
 
-  const verificarPor = useWatch({
-    control,
-    name: "verificarPor",
-    defaultValue: VerificarPor.WHATSAPP,
-  });
+  const verificarPor = useWatch({ control, name: "verificarPor" });
   const tipoDocumento = useWatch({ control, name: "tipoDocumento" });
-  const aceptaTerminos = useWatch({ control, name: "aceptaTerminos", defaultValue: false });
+  const aceptaTerminos = useWatch({ control, name: "aceptaTerminos" });
 
   const documentoPlaceholder =
-    !tipoDocumento
-      ? "Selecciona tipo de documento"
-      : tipoDocumento === "dui"
-        ? "06734467-7"
-        : tipoDocumento === "nit"
-          ? "0614-212345-678-1"
-          : tipoDocumento === "pasaporte"
-            ? "A12345678"
-            : "Selecciona tipo de documento";
+    DOCUMENTO_PLACEHOLDERS[tipoDocumento ?? ""] ?? "Selecciona tipo de documento";
 
   const onSubmit = (data: PreReservaFormData) => {
     setSubmittedData(data);

@@ -5,6 +5,12 @@ export enum VerificarPor {
   SMS = "sms",
 }
 
+export const DOCUMENTO_PLACEHOLDERS: Record<string, string> = {
+  dui: "06734467-7",
+  nit: "0614-212345-678-1",
+  pasaporte: "A12345678",
+};
+
 export const TIPOS_DOCUMENTO: SelectOption[] = [
   { value: "", label: "Seleccionar" },
   { value: "dui", label: "DUI" },
