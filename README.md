@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Propi
 
-## Getting Started
+Aplicación web para explorar inmuebles y realizar pre-reservas. Incluye una página de inicio y un formulario de pre-reserva con validación.
 
-First, run the development server:
+## Stack
+
+- **React 18**
+- **Next.js 14** (App Router, enrutamiento basado en archivos)
+- **TypeScript**
+- **Tailwind CSS**
+- **React Hook Form** + **Yup** (validación)
+- **@tabler/icons-react** (iconos)
+- **Axios** (cliente HTTP para el API)
+
+## Requisitos
+
+- Node.js 18+ (probado con Node 20)
+
+## Instalación
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clonar el repositorio
+git clone <url-del-repositorio>
+cd propi
+
+# Instalar dependencias (npm o yarn)
+npm install
+# yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ejecución
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Desarrollo
+npm run dev
+# yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
 
-## Learn More
+```bash
+# Build de producción
+npm run build
+# yarn build
 
-To learn more about Next.js, take a look at the following resources:
+# Servir build
+npm start
+# yarn start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Estructura del proyecto
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+propi/
+├── api/                 # Cliente API (instance, pre-reserva)
+├── app/                  # Páginas y layout (Next.js App Router)
+├── components/           # Componentes React
+│   ├── pre-reserva/     # Formulario y modales
+│   ├── property/        # Card, header, availability
+│   ├── ui/              # CustomSelect, CustomCheckbox, etc.
+│   ├── carousel/
+│   └── navbar/
+├── hooks/                # usePreReservaSubmit
+├── lib/                  # Schemas, constantes, formatters, fonts
+├── types/
+└── public/
+```
 
-## Deploy on Vercel
+## Rutas
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+| Ruta | Descripción |
+|------|-------------|
+| `/` | Página de inicio con carrusel y enlace al formulario |
+| `/pre-reserva` | Formulario de pre-reserva con validación |
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Decisiones técnicas
+
+- **Sin librerías de UI externas** (MUI, Chakra, shadcn): componentes custom con Tailwind para mayor control del diseño.
+- **Componentes de formulario custom** (`CustomSelect`, `CustomCheckbox`, `CustomRadio`): evitan estilos nativos de iOS y mantienen consistencia visual.
+- **API simulada**: el cliente en `api/` usa un adapter falso; no se realizan llamadas reales. Pensado para sustituirse por un backend real.
+- **Fuentes**: Mena Grotesk y Nunito cargadas con `next/font`.
