@@ -1,10 +1,22 @@
+import type { Metadata } from "next";
 import PropertyHeader from "@/components/property/property-header/PropertyHeader";
 import PropertyCard from "@/components/property/property-card/PropertyCard";
 import PreReservaForm from "@/components/pre-reserva/form/PreReservaForm";
 import { PropertyType } from "@/types";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Pre Reserva",
+  description:
+    "Reserva tu unidad en Opera Tower. Completa el formulario para continuar con tu pre-reserva.",
+  openGraph: {
+    title: "Propi | Pre Reserva - Opera Tower",
+    description:
+      "Reserva tu unidad en Opera Tower. Completa el formulario para continuar con tu pre-reserva.",
+  },
+  twitter: {
+    card: "summary",
+    title: "Propi | Pre Reserva",
+  },
 };
 
 export default function PreReservaPage() {

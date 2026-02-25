@@ -1,8 +1,20 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import Carousel from "@/components/carousel/Carousel";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Propi | Inicio",
+  description:
+    "Encuentra los mejores inmuebles en Latinoamérica. Compra en planos, compra inmediata o alquila el hogar que buscas.",
+  openGraph: {
+    title: "Propi | Inicio",
+    description:
+      "Encuentra los mejores inmuebles en Latinoamérica. Compra en planos, compra inmediata o alquila el hogar que buscas.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Propi | Inicio",
+  },
 };
 
 export default function Home() {
