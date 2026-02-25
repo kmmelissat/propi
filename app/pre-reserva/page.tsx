@@ -1,6 +1,6 @@
 import PropertyHeader from "@/components/property/property-header/PropertyHeader";
 import PropertyCard from "@/components/property/property-card/PropertyCard";
-import PreReservaForm from "@/components/pre-reserva/PreReservaForm";
+import PreReservaForm from "@/components/pre-reserva/form/PreReservaForm";
 import { PropertyType } from "@/types";
 
 export const metadata = {

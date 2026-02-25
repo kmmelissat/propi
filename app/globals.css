@@ -5,6 +5,7 @@
   /* Propi palette */
   --propi-green: #00b66b;
   --propi-green-light: #cdffe7;
+  --propi-green-ultra-light: #e6f9f0;
   /* Grey scale */
   --grey-900: #212121;
   --grey-800: #424242;
@@ -20,6 +21,7 @@
   --color-background: var(--background);
   --color-propi-green: var(--propi-green);
   --color-propi-green-light: var(--propi-green-light);
+  --color-propi-green-ultra-light: var(--propi-green-ultra-light);
   --color-grey-900: var(--grey-900);
   --color-grey-800: var(--grey-800);
   --color-grey-700: var(--grey-700);
